@@ -188,7 +188,7 @@ resource "aws_route_table_association" "private_subnet_route_table_association_2
 }
 
 # Create an IAM role for the EKS cluster
-resource "aws_iam_role" "eks_cluster_role" {
+resource "aws_iam_role" "eks_cluster_role_we" {
   name = "eks_cluster_role"
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
@@ -239,7 +239,7 @@ resource "aws_eks_cluster" "karo_cluster" {
 
 
 # Create an IAM role for the worker nodes
-resource "aws_iam_role" "eks_worker_node_role" {
+resource "aws_iam_role" "eks_worker_node_role_we" {
   name = "eks_worker_node_role"
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
