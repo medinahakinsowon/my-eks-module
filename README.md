@@ -28,5 +28,9 @@ module "eks-module" {
 
 
 ~~~
+After provisioning the cluster using the module above
+then you authenticate into the cluster 
 
+aws eks update-kubeconfig --name eks_cluster --region us-east-1
+![Screenshot 2024-09-20 200514](https://github.com/user-attachments/assets/6f3d14c6-1bf6-431b-b198-c5fdbe8ae835)
 
