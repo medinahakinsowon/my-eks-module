@@ -46,7 +46,12 @@ kubectl apply -f ca.yml
 kubectl get pods -A
 Now we've been able to deploy our autoscaler into our cluster
 Now let deploy a sample application , to see what happens to our nodes.
-
+https://github.com/medinahakinsowon/infra-jan24/blob/main/deployment.yml
+Create deployment file (googlemicro.yml) and copy the deployment script and paste (increase the number of replicaset) then apply
+kubectl apply -f googlemicro.yml
+WHAT HAPPENS WITH THE CLUSTERAUTOSCALER
+It will spin up more nodes for the deployment when we have more pods(replicaset)
+and shut down the nodes once the replicaset reduces
 ~~~
 After provisioning the cluster using the module above
 then you authenticate into the cluster 
