@@ -33,7 +33,19 @@ This should be provisioned within your cluster for the autoscaling config to wor
     min_size     = var.min_size
   }
 
-
+Then create cluster autoscaler file, ca.yml file , then copy and paste
+the script from the lesson note.
+this is a docker image file, just make sure the image version is suitable with
+your version of kubernetes.
+CHANGES TO MAKE IN THE SCRIPT
+image:k8s.gcr.io/autoscaling/cluster-autoscaler:v1.26.2
+node-group-auto-discover-asg:tag-k8s.io/cluster-autoscaler/enabled,k8s/cluster-autoscaler/(name of cluster)"eks_cluster"
+NEXT
+just apply
+kubectl apply -f ca.yml
+kubectl get pods -A
+Now we've been able to deploy our autoscaler into our cluster
+Now let deploy a sample application , to see what happens to our nodes.
 
 ~~~
 After provisioning the cluster using the module above
