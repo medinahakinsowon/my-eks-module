@@ -24,6 +24,20 @@ module "eks-module" {
   capacity_type  = "ON_DEMAND"
 
 }
+OR
+you could provision a cluster using this code on the terminal
+eksctl create cluster --name <cluster-name> --region <region> --nodegroup-name <nodegroup-name> --nodes <number-of-nodes> --nodes-min <min-nodes> --nodes-max <max-nodes> --managed
+
+
+Once you've provisioned your cluster, then deploy a sample app
+into the cluster.
+Within your manifest file, increase the number of replicaset to the
+need for autoscalling. the default number of nodes within the cluster
+provisioned is 2 which will not be sufficient if larger number of pods
+are provisioned within a manifest file. With that an autoscaling manifest
+will need to be deployed with this cluster.
+kubectl apply -f (manifest name)
+kubectl get pods (to see the pods that have been created)
 
 This should be provisioned within your cluster for the autoscaling config to work
 
